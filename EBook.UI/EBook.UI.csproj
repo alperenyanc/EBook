@@ -43,6 +43,12 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
@@ -88,11 +94,50 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Content\Css\AdminLTE.min.css" />
+    <Content Include="Content\Css\bootstrap.min.css" />
+    <Content Include="Content\Css\dataTables.bootstrap.min.css" />
+    <Content Include="Content\Css\font-awesome.min.css" />
+    <Content Include="Content\Css\ionicons.min.css" />
+    <Content Include="Content\Css\_all-skins.min.css" />
+    <Content Include="Content\Fonts\fontawesome-webfont.svg" />
+    <Content Include="Content\Fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="Content\Fonts\ionicons.svg" />
+    <Content Include="Content\Images\twitter-logo-450x345jpg.jpg" />
+    <Content Include="Content\Scripts\adminlte.min.js" />
+    <Content Include="Content\Scripts\bootstrap.min.js" />
+    <Content Include="Content\Scripts\dataTables.bootstrap.min.js" />
+    <Content Include="Content\Scripts\demo.js" />
+    <Content Include="Content\Scripts\fastclick.js" />
+    <Content Include="Content\Scripts\jquery.dataTables.min.js" />
+    <Content Include="Content\Scripts\jquery.min.js" />
+    <Content Include="Content\Scripts\jquery.slimscroll.min.js" />
+    <Content Include="Content\Uploads\UserImages\CruptedImages\twitter-logo-450x345jpg.jpg" />
+    <Content Include="Content\Uploads\UserImages\OriginalImages\twitter-logo-450x345jpg.jpg" />
+    <Content Include="Content\Uploads\UserImages\XSmallImages\twitter-logo-450x345jpg.jpg" />
     <Content Include="Global.asax" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Areas\Admin\AdminAreaRegistration.cs" />
+    <Compile Include="Areas\Admin\Controllers\AppUserController.cs" />
+    <Compile Include="Areas\Admin\Controllers\ArticleController.cs" />
+    <Compile Include="Areas\Admin\Controllers\CategoryController.cs" />
+    <Compile Include="Areas\Admin\Controllers\HomeController.cs" />
+    <Compile Include="Areas\Admin\Controllers\SubCategoryController.cs" />
+    <Compile Include="Areas\Admin\Models\DTO\AppUserDTO.cs" />
+    <Compile Include="Areas\Admin\Models\DTO\ArticleDTO.cs" />
+    <Compile Include="Areas\Admin\Models\DTO\CategoryDTO.cs" />
+    <Compile Include="Areas\Admin\Models\DTO\SubCategoryDTO.cs" />
+    <Compile Include="Areas\Admin\Models\VM\AddArticleVM.cs" />
+    <Compile Include="Areas\Admin\Models\VM\SubCategoryVM.cs" />
+    <Compile Include="Areas\Admin\Models\VM\UpdateArticleVM.cs" />
+    <Compile Include="Areas\Member\Controllers\ArticleController.cs" />
+    <Compile Include="Areas\Member\Controllers\CommentController.cs" />
+    <Compile Include="Areas\Member\Controllers\HomeController.cs" />
+    <Compile Include="Areas\Member\Controllers\LikeController.cs" />
+    <Compile Include="Areas\Member\MemberAreaRegistration.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -100,6 +145,34 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Views\web.config" />
+    <Content Include="Areas\Admin\Views\web.config" />
+    <Content Include="Content\Fonts\fontawesome-webfont.eot" />
+    <Content Include="Content\Fonts\fontawesome-webfont.ttf" />
+    <Content Include="Content\Fonts\fontawesome-webfont.woff" />
+    <Content Include="Content\Fonts\fontawesome-webfont.woff2" />
+    <Content Include="Content\Fonts\FontAwesome.otf" />
+    <Content Include="Content\Fonts\ionicons.eot" />
+    <Content Include="Content\Fonts\ionicons.ttf" />
+    <Content Include="Content\Fonts\ionicons.woff" />
+    <Content Include="Content\Fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="Content\Fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="Content\Fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="Content\Fonts\glyphicons-halflings-regular.woff2" />
+    <Content Include="Areas\Admin\Views\Shared\AdminLayoutPage.cshtml" />
+    <Content Include="Areas\Admin\Views\AppUser\Add.cshtml" />
+    <Content Include="Areas\Admin\Views\AppUser\List.cshtml" />
+    <Content Include="Areas\Admin\Views\AppUser\Update.cshtml" />
+    <Content Include="Areas\Admin\Views\Article\Add.cshtml" />
+    <Content Include="Areas\Admin\Views\Article\List.cshtml" />
+    <Content Include="Areas\Admin\Views\Article\Update.cshtml" />
+    <Content Include="Areas\Admin\Views\Category\Add.cshtml" />
+    <Content Include="Areas\Admin\Views\Category\List.cshtml" />
+    <Content Include="Areas\Admin\Views\Category\Update.cshtml" />
+    <Content Include="Areas\Admin\Views\Home\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\SubCategory\Add.cshtml" />
+    <Content Include="Areas\Admin\Views\SubCategory\Update.cshtml" />
+    <Content Include="Areas\Admin\Views\SubCategory\List.cshtml" />
+    <Content Include="Areas\Member\Views\web.config" />
     <None Include="packages.config" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -110,8 +183,32 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Areas\Member\Models\" />
+    <Folder Include="Areas\Member\Views\Article\" />
+    <Folder Include="Areas\Member\Views\Comment\" />
+    <Folder Include="Areas\Member\Views\Home\" />
+    <Folder Include="Areas\Member\Views\Like\" />
+    <Folder Include="Areas\Member\Views\Shared\" />
     <Folder Include="Controllers\" />
     <Folder Include="Models\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\EBook.Core\EBook.Core.csproj">
+      <Project>{566316AE-708B-4D3D-8F51-BA1A379D58E3}</Project>
+      <Name>EBook.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\EBook.Model\EBook.Model.csproj">
+      <Project>{8B844C4B-5E82-4BF0-8559-0E90E750BE53}</Project>
+      <Name>EBook.Model</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\EBook.Service\EBook.Service.csproj">
+      <Project>{00A61C8B-75A0-44BC-8563-CDFECB84FD20}</Project>
+      <Name>EBook.Service</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\EBook.Utility\EBook.Utility.csproj">
+      <Project>{E028611B-6032-43EC-9499-4B7275D73274}</Project>
+      <Name>EBook.Utility</Name>
+    </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
