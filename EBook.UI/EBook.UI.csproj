@@ -133,6 +133,12 @@
     <Compile Include="Areas\Admin\Models\VM\AddArticleVM.cs" />
     <Compile Include="Areas\Admin\Models\VM\SubCategoryVM.cs" />
     <Compile Include="Areas\Admin\Models\VM\UpdateArticleVM.cs" />
+    <Compile Include="Areas\Author\AuthorAreaRegistration.cs" />
+    <Compile Include="Areas\Author\Controllers\ArticleController.cs" />
+    <Compile Include="Areas\Author\Controllers\HomeController.cs" />
+    <Compile Include="Areas\Author\Models\DTO\ArticleDTO.cs" />
+    <Compile Include="Areas\Author\Models\VM\AddArticleVM.cs" />
+    <Compile Include="Areas\Author\Models\VM\UpdateArticleVM.cs" />
     <Compile Include="Areas\Member\Controllers\ArticleController.cs" />
     <Compile Include="Areas\Member\Controllers\CommentController.cs" />
     <Compile Include="Areas\Member\Controllers\HomeController.cs" />
@@ -173,6 +179,12 @@
     <Content Include="Areas\Admin\Views\SubCategory\Update.cshtml" />
     <Content Include="Areas\Admin\Views\SubCategory\List.cshtml" />
     <Content Include="Areas\Member\Views\web.config" />
+    <Content Include="Areas\Author\Views\web.config" />
+    <Content Include="Areas\Author\Views\Shared\AuthorLayoutPage.cshtml" />
+    <Content Include="Areas\Author\Views\Home\Index.cshtml" />
+    <Content Include="Areas\Author\Views\Article\Add.cshtml" />
+    <Content Include="Areas\Author\Views\Article\Update.cshtml" />
+    <Content Include="Areas\Author\Views\Article\List.cshtml" />
     <None Include="packages.config" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>

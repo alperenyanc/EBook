@@ -1,0 +1,80 @@
+﻿
+@{
+    ViewBag.Title = "List";
+    Layout = "~/Areas/Author/Views/Shared/AuthorLayoutPage.cshtml";
+}
+@model List<EBook.Model.Option.Article>
+
+<h2>List</h2>
+
+<script src="~/Content/Script/dataTables.bootstrap.min.js"></script>
+<script src="~/Content/Script/jquery.dataTables.min.js"></script>
+<link href="~/Content/Css/dataTables.bootstrap.min.css" rel="stylesheet" />
+
+<section class="content-header">
+    <ol class="breadcrumb">
+        <li><a href="/Admin/Home/Index"><i class="fa fa-home"></i> Home</a></li>
+        <li><a href="/Admin/Article/Add">Add Article</a></li>
+        <li class="active">Article List</li>
+    </ol>
+</section>
+<br />
+<section class="content">
+    <div class="row">
+        <div class="col-xs-12">
+            <div class="box">
+                <div class="box-header">
+                    <h3 class="box-title">List of Articles</h3>
+                </div>
+                <!-- /.box-header -->
+                <div class="box-body">
+                    <table id="example2" class="table table-bordered table-hover">
+                        <thead>
+                            <tr>
+                                <th>Header</th>
+                                <th>Content</th>
+                                <th>Publish Date</th>
+                                <th>Category Name</th>
+                                <th>SubCategory Name</th>
+                                <th>User Name</th>
+                                <td>Image</td>
+                                <th>Update</th>
+                                <th>Delete</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach (var item in Model)
+                            {
+                                <tr>
+                                    <td>@item.Header</td>
+                                    <td>@item.Content</td>
+                                    <td>@item.PublishDate</td>
+                                    <td>@item.SubCategory.Category.Name</td>
+                                    <td>@item.SubCategory.Name</td>
+                                    <td>@item.AppUser.UserName</td>
+                                    <td>
+                                        <img src="@item.ImagePath" style="display:block" width="75" height="75" />
+                                    </td>
+                                    <td><a href="/Author/Article/Update/@item.ID" type="button" class="btn btn-block btn-warning">Update</a></td>
+                                    <td><a href="/Author/Article/Delete/@item.ID" type="button" class="btn btn-block btn-danger">Delete</a></td>
+                                </tr>
+                            }
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<script>$(function () {
+        $('#example1').DataTable()
+        $('#example2').DataTable({
+            'paging': true,
+            'lengthChange': false,
+            'searching': false,
+            'ordering': true,
+            'info': true,
+            'autoWidth': false
+            })
+})
+</script>
