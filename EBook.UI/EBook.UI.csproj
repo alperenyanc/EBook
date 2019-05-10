@@ -144,6 +144,8 @@
     <Compile Include="Areas\Member\Controllers\HomeController.cs" />
     <Compile Include="Areas\Member\Controllers\LikeController.cs" />
     <Compile Include="Areas\Member\MemberAreaRegistration.cs" />
+    <Compile Include="Areas\Member\Models\VM\ArticleDetailVM.cs" />
+    <Compile Include="Areas\Member\Models\VM\JsonLikeVM.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -195,7 +197,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Areas\Member\Models\" />
+    <Folder Include="Areas\Member\Models\DTO\" />
     <Folder Include="Areas\Member\Views\Article\" />
     <Folder Include="Areas\Member\Views\Comment\" />
     <Folder Include="Areas\Member\Views\Home\" />
